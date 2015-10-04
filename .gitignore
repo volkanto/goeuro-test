@@ -18,7 +18,6 @@ target/test-classes/tokmak/goeuro/main/ApplicationShould.class
 target/test-classes/tokmak/goeuro/util/CsvUtilShould.class
 target/test-classes/tokmak/goeuro/util/JsonUtilShould.class
 target/test-classes/tokmak/goeuro/util/RestUtilShould.class
-Berlin.csv
 unknown city.csv
 target/GoEuroTest.jar
 target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst

@@ -1,42 +1,33 @@
 package tokmak.goeuro.main;
 
-import java.io.IOException;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-/**
- * <b>Project GoEuroTest</b><br />
- * ApplicationShould.java<br />
- *
- * @author Volkan Tokmak
- * @since 0.0.1
- */
-public class ApplicationShould 
-{
-	@Test(expected=IllegalArgumentException.class) public void
-	throws_exception_when_argument_is_null() throws IOException
-	{
-		Application.main(null);
-	}
-	
-	@Test(expected=IllegalArgumentException.class) public void
-	throws_exception_when_argument_is_empty() throws IOException
-	{
-		String[] arguments = {}; 
-		Application.main(arguments);
-	}
-	
-	@Test(expected=IllegalArgumentException.class) public void
-	throws_exception_when_argument_is_more_than_one() throws IOException
-	{
-		String[] arguments = {"Ankara", "Berlin"}; 
-		Application.main(arguments);
-	}
-	
-	@Test(expected=IllegalArgumentException.class) public void
-	throws_exception_when_suggest_list_is_empty() throws IOException 
-	{
-		String[] arguments = {"Unknown city"};
-		Application.main(arguments);
-	}
+
+public class ApplicationShould {
+
+    @Test
+    public void throws_exception_when_argument_is_null() {
+        assertThrows(IllegalArgumentException.class, () -> Application.main(null));
+    }
+
+    @Test
+    public void
+    throws_exception_when_argument_is_empty() {
+        String[] arguments = {};
+        assertThrows(IllegalArgumentException.class, () -> Application.main(arguments));
+    }
+
+    @Test
+    public void throws_exception_when_argument_is_more_than_one() {
+        String[] arguments = {"Ankara", "Berlin"};
+        assertThrows(IllegalArgumentException.class, () -> Application.main(arguments));
+    }
+
+    @Test
+    public void throws_exception_when_suggest_list_is_empty() {
+        String[] arguments = {"Unknown city"};
+        assertThrows(IllegalArgumentException.class, () -> Application.main(arguments));
+    }
 }
